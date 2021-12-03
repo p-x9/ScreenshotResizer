@@ -1,0 +1,9 @@
+Package: com.p-x9.screenshot-resize
+Name: screenshot-resize
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: p-x9
+Author: p-x9
+Section: Tweaks
