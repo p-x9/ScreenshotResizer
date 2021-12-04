@@ -16,3 +16,5 @@ screenshotresize_CFLAGS = -fobjc-arc
 $(TWEAK_NAME)_FRAMEWORKS = UIKit QuartzCore VideoToolbox CoreGraphics CoreVideo
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += preference
+include $(THEOS_MAKE_PATH)/aggregate.mk
