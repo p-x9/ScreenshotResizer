@@ -8,8 +8,8 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = preference
 
-preference_FILES = SSRRootListController.m
-preference_FRAMEWORKS = UIKit
+preference_FILES = SSRRootListController.m SSRHeaderView.m
+preference_FRAMEWORKS = UIKit CoreGraphics
 preference_PRIVATE_FRAMEWORKS = Preferences
 preference_INSTALL_PATH = /Library/PreferenceBundles
 preference_CFLAGS = -fobjc-arc
