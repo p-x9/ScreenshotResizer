@@ -11,7 +11,13 @@
 
 
 @implementation UIImage (Resize)
-- (UIImage *)imageWithSize:(CGSize)newSize
+- (UIImage *)resizedWithScale:(CGFloat)scale {
+	CGSize size = self.size;
+	CGSize newSize = CGSizeMake(size.width*scale, size.height*scale);
+	return [self resizedWithSize:newSize];
+}
+
+- (UIImage *)resizedWithSize:(CGSize)newSize
 {
     UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:newSize];
     UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext*_Nonnull myContext) {
@@ -23,27 +29,25 @@
 
 %hook SSMainScreenSnapshotter
 
--(UIImage*)takeScreenshot{
+- (UIImage *)takeScreenshot{
 	UIImage *image = %orig;
-	CGSize size = image.size;
-	CGSize newSize = CGSizeMake(size.width/15, size.height/15);
 	IOSurfaceRef ioSurface = (__bridge IOSurfaceRef)[image performSelector:@selector(ioSurface)];
 	
-
 	NSDictionary *pixelBufferAttributes = @{(NSString *)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA)};
 	CVPixelBufferRef pixcelBuffer;
     CVPixelBufferCreateWithIOSurface(NULL, ioSurface, (__bridge CFDictionaryRef _Nullable)(pixelBufferAttributes), &pixcelBuffer);
+	
 	CGImageRef cgimage;
 	VTCreateCGImageFromCVPixelBuffer(pixcelBuffer, nil, &cgimage);
 
 	image = [[UIImage alloc] initWithCGImage:cgimage];
-	return [image imageWithSize:newSize];
+	return [image resizedWithScale:0.25];
 }
 %end
 
 
 %hook _SSScreenCaptureResults
--(UIImage *)image{
+- (UIImage *)image{
 	UIImage *image = %orig;
 
 	return image;
