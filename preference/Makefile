@@ -8,10 +8,11 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = preference
 
-preference_FILES = SSRRootListController.m SSRHeaderView.m
-preference_FRAMEWORKS = UIKit CoreGraphics
-preference_PRIVATE_FRAMEWORKS = Preferences
-preference_INSTALL_PATH = /Library/PreferenceBundles
-preference_CFLAGS = -fobjc-arc
+$(BUNDLE_NAME)_FILES = $(wildcard ./*.m)
+$(BUNDLE_NAME)_FRAMEWORKS = UIKit CoreGraphics
+$(BUNDLE_NAME)_PRIVATE_FRAMEWORKS = Preferences
+$(BUNDLE_NAME)_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
+$(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles
+$(BUNDLE_NAME)_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/bundle.mk

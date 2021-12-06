@@ -57,17 +57,17 @@
 
     self.contentStackView.translatesAutoresizingMaskIntoConstraints = false;
     [NSLayoutConstraint activateConstraints:@[
-        [self.contentStackView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant: -15],
+        [self.contentStackView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant: 8],
         [self.contentStackView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor constant: 0],
         [self.contentStackView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor constant: 0],
-        [self.contentStackView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant: 0],
+        [self.contentStackView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant: -8],
     ]];
 
     return self;
 }
 
 - (CGFloat)preferredHeightForWidth:(CGFloat)arg1 {
-  return 75.0;
+  return 96.0;
 }
 
 

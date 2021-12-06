@@ -7,20 +7,60 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+			<key>headerCellClass</key>
+			<string>SSRHeaderView</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBTwitterCell</string>
 			<key>label</key>
-			<string>preference First Page</string>
+			<string>M</string>
+			<key>user</key>
+			<string>p_x9</string>
+			<key>action</key>
+			<string>twitter</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<true/>
+			<false/>
 			<key>defaults</key>
-			<string>com.p-x9.screenshotresize.preference</string>
+			<string>com.p-x9.screenshotresizer.pref</string>
 			<key>key</key>
-			<string>AwesomeSwitch1</string>
+			<string>isEnabled</string>
 			<key>label</key>
-			<string>Awesome Switch 1</string>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>settings</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSStaticTextCell</string>
+			<key>label</key>
+			<string>Scale</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>label</key>
+			<string>Scale</string>
+			<key>default</key>
+			<real>0.5</real>
+			<key>defaults</key>
+			<string>com.p-x9.screenshotresizer.pref</string>
+			<key>key</key>
+			<string>Scale</string>
+			<key>min</key>
+			<integer>0</integer>
+			<key>max</key>
+			<integer>1</integer>
+			<key>showValue</key>
+			<true/>
 		</dict>
 	</array>
 	<key>title</key>
