@@ -54,7 +54,7 @@
 			<key>defaults</key>
 			<string>com.p-x9.screenshotresizer.pref</string>
 			<key>key</key>
-			<string>Scale</string>
+			<string>scale</string>
 			<key>min</key>
 			<integer>0</integer>
 			<key>max</key>
