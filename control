@@ -1,6 +1,6 @@
 Package: com.p-x9.screenshot-resize
 Name: screenshot-resize
-Depends: mobilesubstrate
+Depends: mobilesubstrate, ws.hbang.common (>= 1.11), firmware (>= 11.0)
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: An awesome MobileSubstrate tweak!
