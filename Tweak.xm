@@ -1,9 +1,3 @@
-/*%hook SBScreenshotManagerDataSource
--(id)screenshotManagerScreensToScreenshot:(id)arg1 {
-	NSLog(@"ajfpoasjpoasjf%@",arg1);
-	%orig;
-}
-%end*/
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <IOSurface/IOSurfaceRef.h>
@@ -59,7 +53,7 @@ static void settingsChanged(CFNotificationCenterRef center, void *observer, CFSt
 	VTCreateCGImageFromCVPixelBuffer(pixcelBuffer, nil, &cgimage);
 
 	image = [[UIImage alloc] initWithCGImage:cgimage];
-	return [image resizedWithScale:scale+0.001];
+	return [image resizedWithScale:fmax(scale, 0.001)];
 }
 %end
 
